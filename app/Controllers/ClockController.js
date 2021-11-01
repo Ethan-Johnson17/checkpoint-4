@@ -2,7 +2,9 @@ import { ProxyState } from "../AppState.js"
 
 function _draw() {
     let today = new Date();
-    let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    let minutes = String(today.getMinutes()).padStart(2, '0')
+    let seconds = String(today.getSeconds()).padStart(2, '0')
+    let time = today.getHours() + ":" + minutes + ":" + seconds;
     document.getElementById('clock').innerHTML = `<p class="text-light text-big text-shadow">${time}</p>`
 
 }
