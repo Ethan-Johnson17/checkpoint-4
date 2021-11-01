@@ -14095,10 +14095,36 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: #e5e5e5;
+  background-size: cover;
 }
 
 main {
   flex-grow: 1;
+}
+
+.bgOpac {
+  background-color: rgba(11, 11, 32, 0.25);
+}
+
+.text-shadow {
+  text-shadow: black 1px 1px 1px;
+}
+
+.text-big {
+  font-size: 80px;
+}
+
+.hide {
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.bgOpac:hover {
+  background-color: rgba(11, 11, 32, 0.5);
+}
+
+.reveal:hover .hide {
+  opacity: 1 !important;
 }
 
 /*# sourceMappingURL=main.css.map */

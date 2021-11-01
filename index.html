@@ -8,40 +8,58 @@
   <link rel="icon" href="https://bcw.blob.core.windows.net/public/img/9977764104160066">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="//cdn.materialdesignicons.com/5.4.55/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
   <title>checkpoint-4</title>
 </head>
 
-<body>
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light no-select">
-      <a class="navbar-brand ms-3" href="#">
-        <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
-          loading="lazy">
-        <span class="ms-2">checkpoint-4</span>
-      </a>
-    </nav>
+<body id="img">
+  <header class="container-fluid">
+    <div class="row justify-content-end">
+      <div class="col-md-2 text-shadow">
+        <div class="selectable text-light f-10" onclick="app.weatherController._drawF()">Fahrenheit</div>
+        <div class="selectable text-light f-10">
+          <p onclick="app.weatherController._drawC()">Celsius</p>
+        </div>
+        <div class="ms-2 text-light text-center" id="weather"></div>
+      </div>
+    </div>
   </header>
   <main>
     <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="app"></div>
+      <div class="row justify-content-center my-1">
+        <div class="col-6 f-28 text-light text-center" id="clock"></div>
+      </div>
+      <div class="row justify-content-center mb-2">
+        <div class="col-md-4 bgOpac text-light" id="quote">Quote</div>
+      </div>
+
+      <div id="app"></div>
+    </div>
+  </main>
+  <footer class="container-fluid">
+    <div class="row justify-content-end mb-2">
+      <div class="col-md-3 border border-dark bgOpac pb-3">
+        <form class="row align-items-end pe-2" onsubmit="app.tasksController.createTask('${this.desc}')">
+          <div class="col-md-8 mb-2">
+            <input type="text" required title="3 to 20 characters" pattern=".{3,20}" maxlength="20" class="form-control"
+              name="description" id="" aria-describedby="helpId" placeholder="add ToDo">
+          </div>
+          <button class="btn col-md-1 text-light f-20 mt-4"><i class="mdi mdi-plus"></i></button>
+        </form>
+        <div class="row text-light" id="task-list">
+          <!-- <div class="col-md-12">${'this.desc'}
+            </div> -->
         </div>
       </div>
     </div>
-  </main>
-  <footer class="bg-dark text-light">
-    <div class="text-center no-select">
-      <p><small>Made with 💖 by Codeworks</small></p>
-    </div>
   </footer>
-
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.23.0/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.9/dist/sweetalert2.all.min.js"></script>
   <script src="app/main.js" type="module"></script>
 </body>
 
